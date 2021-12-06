@@ -30,11 +30,11 @@ public class EmployeeActivityController {
 	@Autowired
 	private EmployeeActivityService employeeService;
 	
-	@PostMapping(value = "/add", consumes = { "application/json" }, produces = { "application/json" })
-	public EmployeeActivity addDailyActivity(@Valid @RequestBody EmployeeActivity employeeActivity) {
-		return employeeService.addDailyActivity(employeeActivity);
-	}
-
+	 @PostMapping("/add")
+	 @ResponseStatus(HttpStatus.CREATED)
+	 public EmployeeActivity addDailyActivity(@Valid @RequestBody EmployeeActivity employeeActivity) {
+	        return employeeService.addDailyActivity(employeeActivity);
+	    }
 	@GetMapping("/dailyactivity")
 	public List<EmployeeActivity> viewDailyActivities() {
 		return employeeService.viewDailyActivities();

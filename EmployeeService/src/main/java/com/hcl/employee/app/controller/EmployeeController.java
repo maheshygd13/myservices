@@ -41,9 +41,9 @@ public class EmployeeController {
 	@Autowired(required=true)
 	EmployeeActivityProxy employeeActivityProxy;
 	
-	 @PostMapping("/createEmployee")
-	 @ResponseStatus(HttpStatus.CREATED)
-	 Employee createEmployee(@Valid @RequestBody Employee employee) {
+	@PostMapping("/createEmployee")
+	@ResponseStatus(HttpStatus.CREATED)
+	public Employee createEmployee(@Valid @RequestBody Employee employee) {
 	        return employeeService.createEmployee(employee);
 	    }
 	 
