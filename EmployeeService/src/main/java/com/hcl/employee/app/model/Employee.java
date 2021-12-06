@@ -4,9 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -15,33 +14,39 @@ public class Employee {
 	
 	@Id
 	@Column(name = "employeeCode")
-
+	@NotNull(message = "EmployeeCode is required")
 	private Long employeeCode;
-	@NotEmpty
+	@NotEmpty(message = "Employee Name is required")
 	@Size(max = 100, message = "Employee name can have max 100 characters")
     @Column(name = "employeeName")
    	private String employeeName;
+	@NotEmpty(message = "Employee Gender is required")
 	@NotEmpty
 	@Size(max = 1, message = "Employee name can have max 1 character")
     @Column(name = "employeeGender")
    	private String employeeGender;
+	@NotEmpty(message = "Employee Designation is required")
 	@NotEmpty
     @Size(max = 100, message = "Employee employeeDesignation can have max 100 characters")
     @Column(name = "employeeDesignation")
    	private String employeeDesignation;
+	@NotEmpty(message = "Employee Email is required")
 	@NotEmpty
     @Size(max = 100, message = "Employee employeeEmail can have max 100 characters")
     @Column(name = "employeeEmail")
    	private String employeeEmail;
+	@NotEmpty(message = "Employee Experience is required")
 	@NotEmpty
     @Size(max = 2, message = "Employee employeeExp can have max 2 characters")
     @Column(name = "employeeExp")
    	private String employeeExp;
    	private Long employeePhoneNo;
+   	@NotEmpty(message = "Employee Location is required")
     @Size(max = 100, message = "Employee Location can have max 100 characters")
     @Column(name = "employeeLocation")
    	private String employeeLocation;
-    @Size(max = 15, message = "Employee Location can have max 100 characters")
+	@NotEmpty(message = "Employee Status is required")
+    @Size(max = 15, message = "Employee Status can have max 100 characters")
     @Column(name = "employeeStatus")
    	private String employeeStatus;
     

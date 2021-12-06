@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "EMPLOYEEACTIVITY")
@@ -19,8 +21,11 @@ public class EmployeeActivity {
    	private Long employeeCode;
     @Column(name = "activityDate")
    	private String activityDate;
+    @NotEmpty(message = "Employee Name is required")
+	@Size(max = 3000, message = "Employee activity Description can have max 3000 characters")
     @Column(name = "activityDescription")
    	private String activityDescription;
+    @Size(max = 10, message = "Employee activity Status can have max 10 characters")
     @Column(name = "activityStatus")
    	private String activityStatus;
     
