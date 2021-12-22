@@ -16,11 +16,12 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.http.HttpStatus;
 import com.hcl.employee.activity.app.exception.*;
 import com.hcl.employee.activity.app.model.EmployeeActivity;
 import com.hcl.employee.activity.app.repository.EmployeeActivityRepository;
 import com.hcl.employee.activity.app.service.EmployeeActivityService;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 @RestController
 @RequestMapping("/api/dailyactivity")
